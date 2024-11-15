@@ -1,0 +1,4 @@
+{
+    "FREESURFER_HOME": "path to freesurfer installation",
+    "SUBJECTS_DIR": "path to subjects directory with fsaverage and other standard templates"
+}
