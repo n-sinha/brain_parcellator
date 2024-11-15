@@ -5,6 +5,8 @@ This Python package provides functionality for processing T1-weighted MRI images
 
 ## Configuration
 ### Environment Setup (`setup_environment.json`)
+Make this file in the root directory and fill in the paths to your FreeSurfer installation and subjects directory where freesurfer templates are stored.
+
 ```json
 {
     "FREESURFER_HOME": "/Applications/freesurfer/7.3.2/",
