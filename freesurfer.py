@@ -105,8 +105,8 @@ class Multiscaleatlas:
                 '--srcsubject', 'fsaverage',
                 '--trgsubject', self.subjectID,
                 '--hemi', 'lh',
-                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/lh.Lausanne2018.scale2.annot'),
-                '--tval', os.path.join(sub_dir, self.subjectID, 'label/lh.Lausanne2018.scale2.annot')]
+                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/lh.lausanne2018.scale2.annot'),
+                '--tval', os.path.join(sub_dir, self.subjectID, 'label/lh.lausanne2018.scale2.annot')]
             
         subprocess.run(cmd, check=True)
     
@@ -115,15 +115,15 @@ class Multiscaleatlas:
                 '--srcsubject', 'fsaverage',
                 '--trgsubject', self.subjectID,
                 '--hemi', 'rh',
-                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/rh.Lausanne2018.scale2.annot'),
-                '--tval', os.path.join(sub_dir, self.subjectID, 'label/rh.Lausanne2018.scale2.annot')]
+                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/rh.lausanne2018.scale2.annot'),
+                '--tval', os.path.join(sub_dir, self.subjectID, 'label/rh.lausanne2018.scale2.annot')]
             
         subprocess.run(cmd, check=True)
     
         # Anatomical Statistics for Left Hemisphere
         cmd = ['mris_anatomical_stats', '-th3', '-mgz', '-noglobal',
                 '-cortex', os.path.join(sub_dir, self.subjectID, 'label', 'lh.cortex.label'),
-                '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'lh.Lausanne2018.scale2.stats'),
+                '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'lh.lausanne2018.scale2.stats'),
                 '-b', '-a', os.path.join(sub_dir, self.subjectID, 'label', 'lh.lausanne2018.scale2.annot'),
                 self.subjectID, 'lh']
     
@@ -133,7 +133,7 @@ class Multiscaleatlas:
         cmd = ['mris_anatomical_stats', 
                 '-th3', '-mgz', '-noglobal',
                 '-cortex', os.path.join(sub_dir, self.subjectID, 'label', 'rh.cortex.label'),
-                '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'rh.Lausanne2018.scale2.stats'),
+                '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'rh.lausanne2018.scale2.stats'),
                 '-b', '-a', os.path.join(sub_dir, self.subjectID, 'label', 'rh.lausanne2018.scale2.annot'),
                 self.subjectID, 'rh']
             
@@ -165,8 +165,8 @@ class Multiscaleatlas:
                 '--srcsubject', 'fsaverage',
                 '--trgsubject', self.subjectID,
                 '--hemi', 'lh',
-                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/lh.Lausanne2018.scale3.annot'),
-                '--tval', os.path.join(sub_dir, self.subjectID, 'label/lh.Lausanne2018.scale3.annot')]
+                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/lh.lausanne2018.scale3.annot'),
+                '--tval', os.path.join(sub_dir, self.subjectID, 'label/lh.lausanne2018.scale3.annot')]
         
         subprocess.run(cmd, check=True)
 
@@ -175,8 +175,8 @@ class Multiscaleatlas:
                 '--srcsubject', 'fsaverage',
                 '--trgsubject', self.subjectID,
                 '--hemi', 'rh',
-                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/rh.Lausanne2018.scale3.annot'),
-                '--tval', os.path.join(sub_dir, self.subjectID, 'label/rh.Lausanne2018.scale3.annot')]
+                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/rh.lausanne2018.scale3.annot'),
+                '--tval', os.path.join(sub_dir, self.subjectID, 'label/rh.lausanne2018.scale3.annot')]
         
         subprocess.run(cmd, check=True)
     
@@ -184,7 +184,7 @@ class Multiscaleatlas:
         cmd = ['mris_anatomical_stats', 
             '-th3', '-mgz', '-noglobal',
             '-cortex', os.path.join(sub_dir, self.subjectID, 'label', 'lh.cortex.label'),
-            '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'lh.Lausanne2018.scale3.stats'),
+            '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'lh.lausanne2018.scale3.stats'),
             '-b', '-a', os.path.join(sub_dir, self.subjectID, 'label', 'lh.lausanne2018.scale3.annot'),
             self.subjectID, 'lh']
     
@@ -194,7 +194,7 @@ class Multiscaleatlas:
         cmd = ['mris_anatomical_stats', 
             '-th3', '-mgz', '-noglobal',
             '-cortex', os.path.join(sub_dir, self.subjectID, 'label', 'rh.cortex.label'),
-            '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'rh.Lausanne2018.scale3.stats'),
+            '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'rh.lausanne2018.scale3.stats'),
             '-b', '-a', os.path.join(sub_dir, self.subjectID, 'label', 'rh.lausanne2018.scale3.annot'),
             self.subjectID, 'rh']
         
@@ -227,8 +227,8 @@ class Multiscaleatlas:
                 '--srcsubject', 'fsaverage',
                 '--trgsubject', self.subjectID,
                 '--hemi', 'lh',
-                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/lh.Lausanne2018.scale4.annot'),
-                '--tval', os.path.join(sub_dir, self.subjectID, 'label/lh.Lausanne2018.scale4.annot')]
+                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/lh.lausanne2018.scale4.annot'),
+                '--tval', os.path.join(sub_dir, self.subjectID, 'label/lh.lausanne2018.scale4.annot')]
         
         subprocess.run(cmd, check=True)
 
@@ -237,8 +237,8 @@ class Multiscaleatlas:
                 '--srcsubject', 'fsaverage',
                 '--trgsubject', self.subjectID,
                 '--hemi', 'rh',
-                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/rh.Lausanne2018.scale4.annot'),
-                '--tval', os.path.join(sub_dir, self.subjectID, 'label/rh.Lausanne2018.scale4.annot')]
+                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/rh.lausanne2018.scale4.annot'),
+                '--tval', os.path.join(sub_dir, self.subjectID, 'label/rh.lausanne2018.scale4.annot')]
             
         subprocess.run(cmd, check=True)
     
@@ -246,7 +246,7 @@ class Multiscaleatlas:
         cmd = ['mris_anatomical_stats', 
                 '-th3', '-mgz', '-noglobal',
                 '-cortex', os.path.join(sub_dir, self.subjectID, 'label', 'lh.cortex.label'),
-                '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'lh.Lausanne2018.scale4.stats'),
+                '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'lh.lausanne2018.scale4.stats'),
                 '-b', '-a', os.path.join(sub_dir, self.subjectID, 'label', 'lh.lausanne2018.scale4.annot'),
                 self.subjectID, 'lh']
         
@@ -256,7 +256,7 @@ class Multiscaleatlas:
         cmd = ['mris_anatomical_stats', 
                 '-th3', '-mgz', '-noglobal',
                 '-cortex', os.path.join(sub_dir, self.subjectID, 'label', 'rh.cortex.label'),
-                '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'rh.Lausanne2018.scale4.stats'),
+                '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'rh.lausanne2018.scale4.stats'),
                 '-b', '-a', os.path.join(sub_dir, self.subjectID, 'label', 'rh.lausanne2018.scale4.annot'),
                 self.subjectID, 'rh']
         
@@ -288,8 +288,8 @@ class Multiscaleatlas:
                 '--srcsubject', 'fsaverage',
                 '--trgsubject', self.subjectID,
                 '--hemi', 'lh',
-                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/lh.Lausanne2018.scale5.annot'),
-                '--tval', os.path.join(sub_dir, self.subjectID, 'label/lh.Lausanne2018.scale5.annot')]
+                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/lh.lausanne2018.scale5.annot'),
+                '--tval', os.path.join(sub_dir, self.subjectID, 'label/lh.lausanne2018.scale5.annot')]
         
         subprocess.run(cmd, check=True)
 
@@ -298,8 +298,8 @@ class Multiscaleatlas:
                 '--srcsubject', 'fsaverage',
                 '--trgsubject', self.subjectID,
                 '--hemi', 'rh',
-                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/rh.Lausanne2018.scale5.annot'),
-                '--tval', os.path.join(sub_dir, self.subjectID, 'label/rh.Lausanne2018.scale5.annot')]
+                '--sval-annot', os.path.join(sub_dir, 'fsaverage/label/rh.lausanne2018.scale5.annot'),
+                '--tval', os.path.join(sub_dir, self.subjectID, 'label/rh.lausanne2018.scale5.annot')]
         
         subprocess.run(cmd, check=True)
 
@@ -307,7 +307,7 @@ class Multiscaleatlas:
         cmd = ['mris_anatomical_stats', 
             '-th3', '-mgz', '-noglobal',
             '-cortex', os.path.join(sub_dir, self.subjectID, 'label', 'lh.cortex.label'),
-            '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'lh.Lausanne2018.scale5.stats'),
+            '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'lh.lausanne2018.scale5.stats'),
             '-b', '-a', os.path.join(sub_dir, self.subjectID, 'label', 'lh.lausanne2018.scale5.annot'),
             self.subjectID, 'lh']
 
@@ -317,7 +317,7 @@ class Multiscaleatlas:
         cmd = ['mris_anatomical_stats', 
             '-th3', '-mgz', '-noglobal',
             '-cortex', os.path.join(sub_dir, self.subjectID, 'label', 'rh.cortex.label'),
-            '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'rh.Lausanne2018.scale5.stats'),
+            '-f', os.path.join(sub_dir, self.subjectID, 'stats', 'rh.lausanne2018.scale5.stats'),
             '-b', '-a', os.path.join(sub_dir, self.subjectID, 'label', 'rh.lausanne2018.scale5.annot'),
             self.subjectID, 'rh']
         
@@ -356,7 +356,12 @@ def main():
     args = parser.parse_args()
 
     recon = Multiscaleatlas(args.t1, args.s, args.o)
-    recon.recon_all()
+    # recon.recon_all()
+    recon.lausanne2018scale1()
+    recon.lausanne2018scale2()
+    recon.lausanne2018scale3()
+    recon.lausanne2018scale4()
+    recon.lausanne2018scale5()
 
 if __name__ == "__main__":
     main()

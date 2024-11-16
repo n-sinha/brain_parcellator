@@ -36,7 +36,8 @@ def main():
     fs_reconall = files.locT1w()
     fs_reconall['sub'] = 'sub-' + fs_reconall['sub']
     # export only sub and filepath columns
-    fs_reconall.to_csv('fs_reconall.csv', columns=['sub', 'file_path'], index=False, header=False)
+    fs_reconall.to_csv('/project/davis_group_1/nishants/brain_parcellator/jobs/fs_reconall.csv',
+                        columns=['sub', 'file_path'], index=False, header=False)
 
 if __name__ == "__main__":
     main()
