@@ -10,6 +10,7 @@
 _build/
 *.pkl
 subjects
+t3_freesurfer
 jobs
 setup_environment.json
 

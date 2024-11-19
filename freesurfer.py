@@ -356,12 +356,13 @@ def main():
     args = parser.parse_args()
 
     recon = Multiscaleatlas(args.t1, args.s, args.o)
-    # recon.recon_all()
+    recon.recon_all()
     recon.lausanne2018scale1()
     recon.lausanne2018scale2()
     recon.lausanne2018scale3()
     recon.lausanne2018scale4()
     recon.lausanne2018scale5()
+    recon.move_output()
 
 if __name__ == "__main__":
     main()
