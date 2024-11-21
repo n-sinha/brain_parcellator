@@ -5,13 +5,13 @@ from bids2table import bids2table
 class getfiles:
     def __init__(self, BIDS_path):
         self.BIDS_path = BIDS_path
+        self.BIDS_df = bids2table(self.BIDS_path)
 
     def locT1w(self):
         """
         Get the location of T1w images for all subjects in the BIDS dataset
         """
-        newdata = bids2table(self.BIDS_path)
-        bidsdf = newdata.filter_multi(
+        bidsdf = self.BIDS_df.filter_multi(
             suffix="T1w",
             ses={"items": ["research3T", "clinical01"]}
         )
@@ -29,6 +29,50 @@ class getfiles:
 
         fs_reconall = cleaned.drop(columns=['extra_entities', 'json', 'space', 'mod_time'])
         return fs_reconall
+    
+    def locdwi(self):
+        """
+        Get the location of dwi images for all subjects in the BIDS dataset
+        """
+        bidsdf = self.BIDS_df.filter_multi(
+            suffix="dwi",
+            ses={"items": ["research3T", "clinical01"]}
+        )
+        bidsdf = bidsdf.flat
+        
+        # drop the columns that are all missing
+        bidsdf = bidsdf.dropna(axis=1, how='all')
+        bidsdf = bidsdf[bidsdf['run'] != 1] # assuming the first run was not complete and run 2 is the complete one
+
+        dwi = bidsdf.pivot_table(index='sub', columns='ext', values='file_path', aggfunc='first')
+
+        # rename coloums names
+        dwi.columns = ['bval', 'bvec', 'dwi']
+
+        return dwi
+    
+    def loctopup(self):
+        """
+        Get the location of topup images for all subjects in the BIDS dataset
+        """
+        bidsdf = self.BIDS_df.filter_multi(
+            suffix="epi",
+            ext = ".nii.gz",
+            ses={"items": ["research3T", "clinical01"]}
+        )
+        bidsdf = bidsdf.flat
+        
+        # drop the columns that are all missing
+        bidsdf = bidsdf.dropna(axis=1, how='all')
+        bidsdf = bidsdf[bidsdf['run'] != 1]  # assuming the first run was not complete and run 2 is the complete one
+
+        topup = bidsdf.pivot_table(index='sub', columns='ext', values='file_path', aggfunc='first')
+
+        # rename coloums
+        topup.columns = ['topup']
+
+        return topup
+
 
 def main():
     BIDS_path = '/project/davis_group_1/nishants/epi_t3_iEEG/data/BIDS'
